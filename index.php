@@ -1,28 +1,42 @@
 <?php
 
-$array = ['apple', 'pear', 'cherry'];
+function hello(){
+    var_dump('hello');
+}
 
-$answer = implode(';',$array);
+hello();
 
-$array = [
-    'hello' => 'world',
-    1,
-    2,
-    4,
-    'something' => 'else',
-    10 => 5,
-    6,
-    7,
-];
-var_dump($array['something']);
-var_dump($array[2]);
-$array = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9],
-];
-var_dump($array[1][2]);
-$array = [[[1]]];
-var_dump($array[0][0][0]);
-$array = [[[[1]]]];
-var_dump($array[0][0][0][0]);
+
+function sum($a, $b){
+   return $a+$b;
+}
+
+$answer = sum(3,5);
+$answer2 = sum(2,1);
+echo $answer . ' is answer and answer2 is ' . $answer2;
+// return will end function early
+// function isBiggerThanTen($a){
+//     if($a > 10){
+//         return true;
+//     }
+//     return false;
+    
+// }
+
+function isBiggerThanTen($a){
+    return $a > 10;
+}
+
+var_dump(isBiggerThanTen(2));
+var_dump(isBiggerThanTen(19));
+
+
+function recursive($i){
+    var_dump($i);
+    if($i<10){
+        $i++;
+        recursive($i);
+    }   
+}
+
+recursive(0);
