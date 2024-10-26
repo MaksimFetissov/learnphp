@@ -1,7 +1,11 @@
 <?php
-$time = microtime(true);
-$i = 0;
-while($time + 10 > microtime(true)){
-    $i++;
+
+
+while(false) {
+    var_dump('while');
 }
-var_dump($i);
+
+
+do {
+    var_dump('do');
+} while(false);
