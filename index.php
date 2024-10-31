@@ -1,12 +1,40 @@
 <?php
+// code author
 
-class Cat {
-    public $name;
+class Job {
+    public function task(Logger $logger){
+        for($i=0;$i<10;$i++){
+            $logger->log("Task $i complete!");  
+        }
+    }
 }
 
-$cat1 = new Cat();
-$cat1->name = 'Nuustik';
+class ConsoleLogger implements Logger {
+    public function log($message){
+        echo $message . "\n";
+    }
+}
 
-$cat2 = clone $cat1;
-$cat2->name = 'Pätu';
-var_dump($cat1, $cat2);
+interface Logger {
+    public function log($message);
+}
+
+
+// code user
+class FileLogger implements Logger {
+    public function log($message){
+        $file = fopen('./log.txt', 'a');
+        fwrite($file, $message. "\n");
+        fclose($file);
+    }
+}
+
+class NothingLogger implements Logger {
+    public function log($message){
+
+    }
+}
+
+$job = new Job();
+$logger = new NothingLogger();
+$job->task($logger);
