@@ -1,30 +1,53 @@
-<?php
+<?php 
+$posts = [
+    [
+        'title' => 'World news 1',
+        'body' => 'World news body 1',
+        'created_at' => 'May 24, 2020',
+        'author' => 'Chris'
+    ],
+    [
+        'title' => 'World news 2',
+        'body' => 'World news body 2',
+        'created_at' => 'December 14, 2020',
+        'author' => 'Kaspar'
+    ],
+    [
+        'title' => 'World news 3',
+        'body' => 'World news body 3',
+        'created_at' => 'August 12, 2020',
+        'author' => 'Martin'
+    ],
+    [
+        'title' => 'World news 4',
+        'body' => 'World news body 4',
+        'created_at' => 'September 1, 2021',
+        'author' => 'Pets'
+    ],
+    [
+        'title' => 'World news 5',
+        'body' => 'World news body 5',
+        'created_at' => 'June 8, 2023',
+        'author' => 'Vello'
+    ],
+];
 
-class Box {
-    public static $count;
-    public $length;
-    public static function test(){
-        var_dump(self::$count);
-        var_dump(self::class);
-        var_dump(static::class);
-    }
+?>
 
-    public function test2(){
-        var_dump($this->length);
-        var_dump(self::$count);
-    }
-}
 
-class MetalBox extends Box {
+<?php include './partials/header.php' ?>
 
-}
+  <?php include './partials/hero.php' ?>
+  <?php include './partials/featured-posts.php' ?>
 
-$box1 = new Box();
-// $box2 = new Box();
-Box::$count = 1;
-Box::$count = 2;
-Box::test();
-MetalBox::test();
-$box1->test2();
-// var_dump($box1, $box2);
-var_dump(Box::$count, Box::$count);
+  <div class="row g-5">
+    <div class="col-md-8">
+      <?php include './partials/posts.php' ?>
+    </div>
+
+    <div class="col-md-4">
+      <?php include './partials/sidebar.php' ?>
+    </div>
+  </div>
+
+<?php include './partials/pagefoot.php' ?>
