@@ -21,8 +21,8 @@
 </head>
 
 <body>
-  <?php include './partials/themetoggle.php' ?>
+  <?php include 'views/partials/themetoggle.php' ?>
 
-  <?php include './partials/nav.php' ?>
+  <?php include 'views/partials/nav.php' ?>
 
   <main class="container">
