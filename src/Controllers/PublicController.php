@@ -112,7 +112,13 @@ class PublicController {
     }
 
     public function form(){
+        
         $name = $_GET['name'] ?? '';
         view('form', compact('name'));
+    }
+
+    public function answer(){
+        dump($_POST);
+        dump($_GET);
     }
 }
