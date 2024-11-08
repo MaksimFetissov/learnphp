@@ -36,7 +36,7 @@ class PublicController {
                 'author' => 'Vello'
             ],
         ];
-        include  __DIR__ . '/../../views/index.php';
+        view('index', compact('posts'));
     }
 
     public function us() {
@@ -72,7 +72,7 @@ class PublicController {
                 'author' => 'Vello'
             ],
         ];
-        include __DIR__ . '/../../views/us.php';
+        view('us', compact('posts'));
     }
 
     public function tech() {
@@ -108,6 +108,11 @@ class PublicController {
                 'author' => 'Vello'
             ],
         ];
-        include __DIR__ . '/../../views/tech.php';
+        view('tech', compact('posts'));
+    }
+
+    public function form(){
+        $name = $_GET['name'] ?? '';
+        view('form', compact('name'));
     }
 }
