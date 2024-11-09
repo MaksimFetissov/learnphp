@@ -30,6 +30,14 @@ class DB {
         return $stmt->fetchAll();
     }
 
+    public function where($table, $class, $fieldName, $fieldValue){
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE $fieldName='$fieldValue'");
+        $stmt->execute();
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        return $stmt->fetchAll();
+    }
+
     public function find($table, $class, $id){
         $stmt = $this->conn->prepare("SELECT * FROM $table WHERE id=$id");
         $stmt->execute();
