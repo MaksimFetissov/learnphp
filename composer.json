@@ -1,5 +1,5 @@
 {
-    "name": "kaspar.martin.suursa/learnphp",
+    "name": "mowgz/kms23learnphp",
     "type": "project",
     "autoload": {
         "psr-4": {
@@ -8,11 +8,9 @@
     },
     "authors": [
         {
-            "name": "Kaspar Martin Suursalu",
-            "email": "kasparsu@gmail.com"
+            "name": "Maksim",
+            "email": "mowgzem@gmail.com"
         }
     ],
-    "require": {
-        "symfony/var-dumper": "^7.1"
-    }
+    "require": {}
 }
